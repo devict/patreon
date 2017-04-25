@@ -32,8 +32,8 @@ func main() {
 	})
 
 	http.HandleFunc("/events", func(w http.ResponseWriter, r *http.Request) {
-		api_url := "http://api.meetup.com/2/events?status=upcoming&order=time&limited_events=False&group_urlname=devict&desc=false&offset=0&photo-host=public&format=json&page=20&fields=&sig_id=73273692&sig=9cdd3af6b5a26eb664fe5abab6e5cf7bfaaf090e"
-		res, err := http.Get(api_url)
+		u := "https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=devICT&photo-host=public&page=20&fields=&order=time&status=upcoming&desc=false&sig_id=73273692&sig=8f90c3aff1c3055274bc6dffca9225f51754a928"
+		res, err := http.Get(u)
 		if err != nil {
 			log.Println(err)
 			w.WriteHeader(http.StatusInternalServerError)
