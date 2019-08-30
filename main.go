@@ -43,6 +43,7 @@ func main() {
 
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(res.StatusCode)
 
 		if _, err := io.Copy(w, res.Body); err != nil {
 			log.Println(err)
