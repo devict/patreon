@@ -32,7 +32,7 @@ func main() {
 	})
 
 	http.HandleFunc("/events", func(w http.ResponseWriter, r *http.Request) {
-		u := "https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=devICT&photo-host=public&page=20&fields=&order=time&status=upcoming&desc=false&sig_id=73273692&sig=8f90c3aff1c3055274bc6dffca9225f51754a928"
+		u := "https://api.meetup.com/2/events?&sign=true&photo-host=public&group_urlname=devICT&limited_events=false&fields=series&status=upcoming&page=20"
 		res, err := http.Get(u)
 		if err != nil {
 			log.Println(err)
